@@ -1,6 +1,9 @@
-reduccion = []  # S, [], [S#]                 s# = [simb, [union], S#]
+import generaGrafo
 
+reduccion = []  # S, [], [S#]                 s# = [simb, [union], S#]
 estadosNuevos = [] # S#, []
+nodosG = []
+enlaces = []
 
 tablaSiguiente = [
     ["a", 1, [3,4,5]],
@@ -162,9 +165,22 @@ def muestraFormato():
         for sig in r[2]:
             print(sig[0] + ": " + "sig(" + ") U sig(".join([str(x) for x in sig[1]]) + ") = {" + findSet(sig[2]) + "}    //  S" + str(sig[2]) )
         print()
+def generaDatosGrafo():
+    global nodosG, enlaces
+    acept = tablaSiguiente[-1][1]
+    for r in reduccion:
+        if acept in r[1]:
+            nodosG.append([r[0], True])
+        else:
+            nodosG.append([r[0], False])
+    for r in reduccion:
+        for sig in r[2]:
+            enlaces.append([r[0], sig[2], sig[0]])
 
 def runReduce(tS, i):
-    global tablaSiguiente, inicio
+    global tablaSiguiente, inicio, nodosG, enlaces
     tablaSiguiente = tS
     inicio = i
     reduceTS()
+    generaDatosGrafo()
+    generaGrafo.grafo(nodosG, enlaces)

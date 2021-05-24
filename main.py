@@ -34,3 +34,7 @@ muestraReduc.runReduce(tablaSiguiente, inicio)
 
 #           #Estado, Conjunto de la raíz
 # inicio = [    0,         [1,5]          ]      Preferiblemente el estado siempre será 0
+
+
+#REPOSITORIO
+#https://github.com/JaimeEC/MetodoDelArbol_Reduccion.git

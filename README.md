@@ -7,4 +7,4 @@ Es un generador del autómata reducido a partir de la tabla siguiente obtnida po
 * Despliega el grafo generado del autómata
 
 ## Consideraciones
-Este proyecto no funciona con **dgraph**
+Este proyecto no funciona con la libreria **dgraph**

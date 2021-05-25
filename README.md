@@ -7,4 +7,4 @@ Es un generador del autómata reducido a partir de la tabla siguiente obtenida p
 * Despliega el grafo generado del autómata
 
 ## Consideraciones
-Este proyecto no funciona con el programa **graphviz** (no libreria de python)
+Este proyecto funciona con el programa **graphviz** (no libreria de python)
